@@ -13,7 +13,7 @@
   * root-user-created
     * consuming and creating organisation for this user.
   * user-assigned-and-email-requested
-    * consuming and sending email
+    * consuming and sending email in another service called email-service
 * Creating custom validations.
   * I tried to make errors dynamic as much as possible. However still some improvements needed.
 * Some values are used without constants. 
