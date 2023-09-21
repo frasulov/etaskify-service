@@ -39,8 +39,8 @@ public class User implements UserDetails {
     @ManyToOne
     private Organisation organisation;
 
-    @ManyToMany(mappedBy = "users", cascade = {CascadeType.REMOVE}, fetch = FetchType.EAGER)
-    private Set<Task> tasks;
+    @ManyToMany(mappedBy = "users", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER)
+    private List<Task> tasks;
 
     @Enumerated(EnumType.STRING)
     @Column(length = 10)

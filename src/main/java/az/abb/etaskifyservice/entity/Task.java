@@ -10,13 +10,14 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "tasks")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
+@Data
 public class Task {
 
     @Id
@@ -47,7 +48,7 @@ public class Task {
     @Column(name = "updated_at", columnDefinition = "timestamp default now()")
     private Timestamp updated_at;
 
-    @ManyToMany(cascade = {CascadeType.REMOVE}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     @JoinTable(name = "task_assignees",
             joinColumns = @JoinColumn(name = "task_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"),
@@ -56,5 +57,5 @@ public class Task {
             inverseForeignKey = @ForeignKey(name = "user_fk_id",
                     foreignKeyDefinition = "foreign key(user_id) references users(id) on delete cascade")
     )
-    private Set<User> users;
+    private List<User> users = new ArrayList<>();
 }

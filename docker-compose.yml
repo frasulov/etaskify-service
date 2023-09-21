@@ -1,14 +1,14 @@
 version: "3.9"
 
 volumes:
-  postgresql-stage-volume:
+  postgresql-volume:
 
 services:
   db:
     image: postgres
-    container_name: stage_database
+    container_name: database
     volumes:
-      - postgresql-stage-volume:/var/lib/postgresql/data
+      - postgresql-volume:/var/lib/postgresql/data
     expose:
       - "5433"
     command: -p 5433
@@ -22,9 +22,8 @@ services:
     hostname: swagger-ui
     image: swaggerapi/swagger-ui:latest
     ports:
-      - "7077:8098"
+      - "7077:7099"
     volumes:
       - "./docs:/usr/share/nginx/html/docs"
     environment:
       - API_URL=/docs/api.yaml
-      - VALIDATOR_URL=none

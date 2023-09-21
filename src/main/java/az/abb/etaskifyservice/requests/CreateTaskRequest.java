@@ -27,6 +27,6 @@ public class CreateTaskRequest {
 //    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Timestamp deadline;
 
-//    @Pattern(regexp = "^(todo|in_progress|in_review|done)$", message = "Status must be one of [todo, in_progress, in_review, done]")
+//    @Pattern(regexp = "^(TODO|DONE)$", message = "Status must be one of [todo, in_progress, in_review, done]")
     private TaskStatus status;
 }

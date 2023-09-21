@@ -1,7 +1,6 @@
 package az.abb.etaskifyservice.service;
 
 import az.abb.etaskifyservice.entity.Organisation;
-import az.abb.etaskifyservice.entity.User;
 import az.abb.etaskifyservice.mapper.OrganisationMapper;
 import az.abb.etaskifyservice.repository.OrganisationRepository;
 import az.abb.etaskifyservice.requests.SignupRequest;

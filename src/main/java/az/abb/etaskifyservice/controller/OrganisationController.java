@@ -26,9 +26,6 @@ import java.util.List;
 public class OrganisationController {
 
     private final UserService userService;
-
-    private final OrganisationService organisationService;
-
     private final TaskService taskService;
 
     @PostMapping("/users")

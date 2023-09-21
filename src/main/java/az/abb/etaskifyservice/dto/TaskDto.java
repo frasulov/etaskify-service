@@ -6,10 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,5 +27,5 @@ public class TaskDto {
     @JsonProperty("created_at")
     private String createdAt;
 
-    private Set<UserDto> users;
+    private List<UserDto> users;
 }
